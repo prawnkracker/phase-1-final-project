@@ -1,5 +1,25 @@
 * {
     margin: 0;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Times New Roman', Times, serif;
     box-sizing: border-box;
+    color:antiquewhite;
+}
+
+body {
+    padding: 1rem;
+    background-color: #1d2538;
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+}
+
+#search-bar{ 
+    padding: 20px;
+    text-align: center;
+}
+
+#search-button{
+    color: black;
 }
