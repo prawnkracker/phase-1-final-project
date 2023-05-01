@@ -27,3 +27,15 @@ header {
 #searchByName{
     color:black;
 }
+
+footer p{
+    opacity: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#jikan-logo {
+    height: 50px;
+    margin-left: 50px;
+}
