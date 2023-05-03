@@ -18,6 +18,8 @@ function createAnimeCard(anime){
     score = document.createElement('p'),
     airedFrom = document.createElement('p'),
     airedTo = document.createElement('p');
+    animeCard.classList.add('anime')
+    close.classList.add('close-btn')
     animeCard.append(close);
     close.append(btn);
     animeCard.append(img);
