@@ -93,4 +93,10 @@ function initialize(){
     getTopAnimes(page), handleSubmit, addNavListeners()
 }
 
+function resetPage(){
+    page=1
+    getTopAnimes(page)
+}
+
+document.querySelector('#refresh').addEventListener('click', resetPage)
 initialize()
