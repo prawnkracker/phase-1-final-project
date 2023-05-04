@@ -68,3 +68,7 @@ footer p{
     background-color: #1d2538;
     color:white;
 }
+
+#back,#forward{
+    color:black;
+}

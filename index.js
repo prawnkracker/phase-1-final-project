@@ -58,5 +58,4 @@ function handleSubmit(e){
 
 document.querySelector('#search-bar').addEventListener('submit',handleSubmit)
 
-
 getTopAnimes(page)
