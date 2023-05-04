@@ -34,10 +34,10 @@ function createAnimeCard(anime){
     animeCard.append(airedTo);
     btn.textContent='X'
     img.src=`${anime.images.jpg.image_url}`;
-    title.innerHTML=`Title: ${anime.title_english}`
-    score.innerHTML=`Score: ${anime.score}`   
-    airedFrom.innerHTML=`First Aired: ${anime.aired.from.slice(0,10)}`
-    airedTo.innerHTML=`Aired Until: ${anime.aired.to ? anime.aired.to.slice(0,10) : 'Current'}`
+    title.innerHTML=`<span class='color'>Title: </span>${anime.title_english}`
+    score.innerHTML=`<span class='color'>Score: </span>${anime.score}`   
+    airedFrom.innerHTML=`<span class='color'>First Aired: </span>${anime.aired.from.slice(0,10)}`
+    airedTo.innerHTML=`<span class='color'>Aired Until: </span>${anime.aired.to ? anime.aired.to.slice(0,10) : 'Current'}`
     document.querySelector('#anime-container').appendChild(animeCard)
     btn.addEventListener('click', handleDelete)
 }
