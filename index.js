@@ -9,6 +9,8 @@ function getTopAnimes(a){
     })
 }
 
+
+
 function createAnimeCard(anime){
     let animeCard = document.createElement('div'),
     close = document.createElement('div'),
@@ -47,7 +49,14 @@ function handleDelete(e){
 function handleSubmit(e){
     e.preventDefault()
     input = document.querySelector('input#searchByName')
-    
+    let back = document.querySelector('#back')
+    let forward = document.querySelector('#forward')
+    if(back){
+        back.remove()
+    }    
+    if(forward){
+        forward.remove()
+    }
     fetch(`https://api.jikan.moe/v4/anime?q=${input.value}&sfw`)
     .then(resp =>resp.json())
     .then(data => {
