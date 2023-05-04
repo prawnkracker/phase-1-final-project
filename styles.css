@@ -43,15 +43,19 @@ footer p{
 #anime-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
+#anime-container>div{
+    flex: calc(100%/5)
+}
 .anime{
     width: min-content;
+    padding-bottom: 15px;
 }
 
 .close-div{
-    text-align: end;
+    text-align:start;
 }
 
 .close-button{
