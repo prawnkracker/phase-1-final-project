@@ -63,6 +63,7 @@ function handleSubmit(e){
         document.querySelector('#anime-container').innerHTML = ''
         data.data.forEach(anime=>createAnimeCard(anime))
     })
+    document.querySelector('#search-bar').reset()
 }
 
 document.querySelector('#search-bar').addEventListener('submit',handleSubmit)
