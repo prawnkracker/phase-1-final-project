@@ -72,3 +72,8 @@ footer p{
 #back,#forward{
     color:black;
 }
+
+#back:hover,#forward:hover{
+    background-color: #1d2538;
+    color:white;
+}

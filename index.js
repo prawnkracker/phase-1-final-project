@@ -4,7 +4,7 @@ function getTopAnimes(a){
     fetch(`https://api.jikan.moe/v4/top/anime?page=${a}`)
     .then(resp=>resp.json())
     .then(data=> {
-        // document.querySelector('#anime-container').innerHTML=''
+        document.querySelector('#anime-container').innerHTML=''
         data.data.forEach(anime => createAnimeCard(anime));
     })
 }
@@ -58,4 +58,23 @@ function handleSubmit(e){
 
 document.querySelector('#search-bar').addEventListener('submit',handleSubmit)
 
-getTopAnimes(page)
+function addNavListeners(){
+    let back = document.querySelector('#back'),
+    forward = document.querySelector('#forward');
+    back.addEventListener('click', pageDown)
+    forward.addEventListener('click', pageUp)
+}
+
+function pageUp(){
+    page++
+    getTopAnimes(page)
+}
+
+function pageDown(){
+    if(page>1){
+        page--
+        return getTopAnimes(page)
+    } else{
+        alert('First Page')
+    }
+}
