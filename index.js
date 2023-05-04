@@ -78,3 +78,9 @@ function pageDown(){
         alert('First Page')
     }
 }
+
+function initialize(){
+    getTopAnimes(page), handleSubmit, addNavListeners()
+}
+
+initialize()
