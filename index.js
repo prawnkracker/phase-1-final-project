@@ -36,8 +36,8 @@ function createAnimeCard(anime){
     img.src=`${anime.images.jpg.image_url}`;
     title.innerHTML=`Title: ${anime.title_english}`
     score.innerHTML=`Score: ${anime.score}`   
-    airedFrom.innerHTML=`First Aired: ${anime.aired.from}`
-    airedTo.innerHTML=`Aired Until: ${anime.aired.to}`
+    airedFrom.innerHTML=`First Aired: ${anime.aired.from.slice(0,10)}`
+    airedTo.innerHTML=`Aired Until: ${anime.aired.to ? anime.aired.to.slice(0,10) : 'Current'}`
     document.querySelector('#anime-container').appendChild(animeCard)
     btn.addEventListener('click', handleDelete)
 }
