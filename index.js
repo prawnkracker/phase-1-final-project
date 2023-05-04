@@ -12,14 +12,16 @@ function getTopAnimes(a){
 function createAnimeCard(anime){
     let animeCard = document.createElement('div'),
     close = document.createElement('div'),
-    btn = document.createElement('h3'),
+    btn = document.createElement('button'),
     img = document.createElement('img'),
     title = document.createElement('h2'),
     score = document.createElement('p'),
     airedFrom = document.createElement('p'),
     airedTo = document.createElement('p');
     animeCard.classList.add('anime')
-    close.classList.add('close-btn')
+    close.classList.add('close-div')
+    btn.classList.add('close-button')
+    btn.innerHTML='x'
     animeCard.append(close);
     close.append(btn);
     animeCard.append(img);
@@ -30,7 +32,7 @@ function createAnimeCard(anime){
     btn.textContent='X'
     img.src=`${anime.images.jpg.image_url}`;
     title.innerHTML=`Title: ${anime.title_english}`
-    score.innerHTML=`Score: ${anime.score}`
+    score.innerHTML=`Score: ${anime.score}`    
     airedFrom.innerHTML=`First Aired: ${anime.aired.from}`
     airedTo.innerHTML=`Aired Until: ${anime.aired.to}`
     document.querySelector('#anime-container').appendChild(animeCard)

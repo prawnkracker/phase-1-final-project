@@ -50,6 +50,17 @@ footer p{
     width: min-content;
 }
 
-.close-btn{
+.close-div{
     text-align: end;
+}
+
+.close-button{
+    color:black;
+    font-size: 8px;
+    border-radius: 12px;
+}
+
+.close-button:hover{
+    background-color: #1d2538;
+    color:white;
 }
