@@ -37,6 +37,11 @@ function createAnimeCard(anime){
     airedFrom.innerHTML=`First Aired: ${anime.aired.from}`
     airedTo.innerHTML=`Aired Until: ${anime.aired.to}`
     document.querySelector('#anime-container').appendChild(animeCard)
+    btn.addEventListener('click', handleDelete)
+}
+
+function handleDelete(e){
+    e.target.parentNode.parentNode.remove()
 }
 
 function handleSubmit(e){
@@ -53,4 +58,5 @@ function handleSubmit(e){
 
 document.querySelector('#search-bar').addEventListener('submit',handleSubmit)
 
-    getTopAnimes(page)
+
+getTopAnimes(page)
