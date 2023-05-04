@@ -28,6 +28,10 @@ header {
     color:black;
 }
 
+footer{
+    padding-top: 15px;
+}
+
 footer p{
     opacity: 30%;
     display: flex;
@@ -71,6 +75,7 @@ footer p{
 
 #back,#forward,#refresh{
     color:black;
+    font-size: larger;
 }
 
 #back:hover,#forward:hover,#refresh:hover{
@@ -84,4 +89,8 @@ footer p{
 
 .color{
     color:darkorange;
+}
+
+#buttons{
+    text-align: center;
 }

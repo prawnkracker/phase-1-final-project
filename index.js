@@ -99,4 +99,5 @@ function resetPage(){
 }
 
 document.querySelector('#refresh').addEventListener('click', resetPage)
+
 initialize()
