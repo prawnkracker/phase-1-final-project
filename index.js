@@ -37,7 +37,7 @@ function createAnimeCard(anime){
     title.innerHTML=`<span class='color'>Title: </span>${anime.title_english ? anime.title_english : anime.title_japanese}`
     score.innerHTML=`<span class='color'>Score: </span>${anime.score}`   
     airedFrom.innerHTML=`<span class='color'>First Aired: </span>${anime.aired.from.slice(0,10)}`
-    airedTo.innerHTML=`<span class='color'>Aired Until: </span>${anime.aired.to ? anime.aired.to.slice(0,10) : 'Current'}`
+    airedTo.innerHTML=`<span class='color'>Aired Until: </span>${anime.aired.to ? anime.aired.to.slice(0,10) : 'N/A'}`
     document.querySelector('#anime-container').appendChild(animeCard)
     btn.addEventListener('click', handleDelete)
 }
