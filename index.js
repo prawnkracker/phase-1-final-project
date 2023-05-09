@@ -52,10 +52,10 @@ function handleSubmit(e){
     let back = document.querySelector('#back')
     let forward = document.querySelector('#forward')
     if(back){
-        back.remove()
+        back.style.display='none';
     }    
     if(forward){
-        forward.remove()
+        forward.style.display='none';
     }
     fetch(`https://api.jikan.moe/v4/anime?q=${input.value}&sfw`)
     .then(resp =>resp.json())
@@ -68,13 +68,31 @@ function handleSubmit(e){
 
 document.querySelector('#search-bar').addEventListener('submit',handleSubmit)
 
+// function addNavListeners(){
+//     let back = document.querySelector('#back'),
+//     forward = document.querySelector('#forward');
+//     back.addEventListener('click', pageDown)
+//     forward.addEventListener('click', pageUp)
+// }
+
 function addNavListeners(){
-    let back = document.querySelector('#back'),
-    forward = document.querySelector('#forward');
+    let buttonContainer = document.querySelector('#buttons')
+    let back = document.createElement('button'),
+    forward = document.createElement('button'),
+    refresh = document.createElement('button');
+    back.id = 'back';
+    forward.id = 'forward';
+    refresh.id = 'refresh';
+    back.innerHTML = '←';
+    forward.innerHTML = '→';
+    refresh.innerHTML = '↻';
+    buttonContainer.append(back);
+    buttonContainer.append(forward);
+    buttonContainer.append(refresh)
     back.addEventListener('click', pageDown)
     forward.addEventListener('click', pageUp)
+    refresh.addEventListener('click', resetPage)
 }
-
 function pageUp(){
     page++
     getTopAnimes(page)
@@ -96,8 +114,8 @@ function initialize(){
 function resetPage(){
     page=1
     getTopAnimes(page)
+    back.style.display = 'inline-block';
+    forward.style.display = 'inline-block';
 }
-
-document.querySelector('#refresh').addEventListener('click', resetPage)
 
 initialize()
