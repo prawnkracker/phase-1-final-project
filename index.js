@@ -34,7 +34,7 @@ function createAnimeCard(anime){
     animeCard.append(airedTo);
     btn.textContent='X'
     img.src=`${anime.images.jpg.image_url}`;
-    title.innerHTML=`<span class='color'>Title: </span>${anime.title_english}`
+    title.innerHTML=`<span class='color'>Title: </span>${anime.title_english ? anime.title_english : anime.title_japanese}`
     score.innerHTML=`<span class='color'>Score: </span>${anime.score}`   
     airedFrom.innerHTML=`<span class='color'>First Aired: </span>${anime.aired.from.slice(0,10)}`
     airedTo.innerHTML=`<span class='color'>Aired Until: </span>${anime.aired.to ? anime.aired.to.slice(0,10) : 'Current'}`
@@ -67,13 +67,6 @@ function handleSubmit(e){
 }
 
 document.querySelector('#search-bar').addEventListener('submit',handleSubmit)
-
-// function addNavListeners(){
-//     let back = document.querySelector('#back'),
-//     forward = document.querySelector('#forward');
-//     back.addEventListener('click', pageDown)
-//     forward.addEventListener('click', pageUp)
-// }
 
 function addNavListeners(){
     let buttonContainer = document.querySelector('#buttons')
