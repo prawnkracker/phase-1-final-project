@@ -9,8 +9,6 @@ function getTopAnimes(a){
     })
 }
 
-
-
 function createAnimeCard(anime){
     let animeCard = document.createElement('div'),
     close = document.createElement('div'),
@@ -20,11 +18,11 @@ function createAnimeCard(anime){
     score = document.createElement('p'),
     airedFrom = document.createElement('p'),
     airedTo = document.createElement('p');
-    animeCard.classList.add('anime')
-    close.classList.add('close-div')
-    btn.classList.add('close-button')
-    btn.innerHTML='x'
-    title.classList.add('anime-title')
+    animeCard.classList.add('anime');
+    close.classList.add('close-div');
+    btn.classList.add('close-button');
+    btn.innerHTML='x';
+    title.classList.add('anime-title');
     animeCard.append(close);
     close.append(btn);
     animeCard.append(img);
@@ -32,25 +30,25 @@ function createAnimeCard(anime){
     animeCard.append(score);
     animeCard.append(airedFrom);
     animeCard.append(airedTo);
-    btn.textContent='X'
+    btn.textContent='X';
     img.src=`${anime.images.jpg.image_url}`;
-    title.innerHTML=`<span class='color'>Title: </span>${anime.title_english ? anime.title_english : anime.title_japanese}`
-    score.innerHTML=`<span class='color'>Score: </span>${anime.score}`   
-    airedFrom.innerHTML=`<span class='color'>First Aired: </span>${anime.aired.from.slice(0,10)}`
-    airedTo.innerHTML=`<span class='color'>Aired Until: </span>${anime.aired.to ? anime.aired.to.slice(0,10) : 'N/A'}`
-    document.querySelector('#anime-container').appendChild(animeCard)
-    btn.addEventListener('click', handleDelete)
+    title.innerHTML=`<span class='color'>Title: </span>${anime.title_english ? anime.title_english : anime.title_japanese}`;
+    score.innerHTML=`<span class='color'>Score: </span>${anime.score}`;
+    airedFrom.innerHTML=`<span class='color'>First Aired: </span>${anime.aired.from.slice(0,10)}`;
+    airedTo.innerHTML=`<span class='color'>Aired Until: </span>${anime.aired.to ? anime.aired.to.slice(0,10) : 'N/A'}`;
+    document.querySelector('#anime-container').appendChild(animeCard);
+    btn.addEventListener('click', handleDelete);
 }
 
 function handleDelete(e){
-    e.target.parentNode.parentNode.remove()
+    e.target.parentNode.parentNode.remove();
 }
 
 function handleSubmit(e){
     e.preventDefault()
     input = document.querySelector('input#searchByName')
-    let back = document.querySelector('#back')
-    let forward = document.querySelector('#forward')
+    let back = document.querySelector('#back');
+    let forward = document.querySelector('#forward');
     if(back){
         back.style.display='none';
     }    
@@ -86,6 +84,7 @@ function addNavListeners(){
     forward.addEventListener('click', pageUp)
     refresh.addEventListener('click', resetPage)
 }
+
 function pageUp(){
     page++
     getTopAnimes(page)
@@ -100,15 +99,15 @@ function pageDown(){
     }
 }
 
-function initialize(){
-    getTopAnimes(page), handleSubmit, addNavListeners()
-}
-
 function resetPage(){
     page=1
     getTopAnimes(page)
     back.style.display = 'inline-block';
     forward.style.display = 'inline-block';
+}
+
+function initialize(){
+    getTopAnimes(page), handleSubmit, addNavListeners()
 }
 
 initialize()
